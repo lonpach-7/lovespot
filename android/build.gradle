@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.1'  // Android Gradle Plugin
+        classpath 'com.google.gms:google-services:4.3.15'  // Firebase Plugin
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"  // Set the root project build directory
+
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"  // Organize build directories for each subproject
+}
+
+subprojects {
+    project.evaluationDependsOn(":app")  // Make sure the app subproject is evaluated first
+}
+
+// Clean task to delete build directory
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir  // Remove the build directory when `./gradlew clean` is run
+}

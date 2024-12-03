@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "840676468378",
+    "project_id": "lovespot-943a2",
+    "storage_bucket": "lovespot-943a2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840676468378:android:d687cbdf1c6c2f826a2123",
+        "android_client_info": {
+          "package_name": "com.example.lovespot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZeBDOJgnpEFeTG72tnSxAyQ1bhJp73hw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

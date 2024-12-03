@@ -1,0 +1,1 @@
+ C:\\Users\\Jairus\\Desktop\\mahlon\\lovespot\\.dart_tool\\flutter_build\\299c6781600b16386c75fe1d585b23cf\\native_assets.yaml: 

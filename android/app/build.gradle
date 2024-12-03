@@ -1,0 +1,54 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.lovespot"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11  // Updated to Java 11
+        targetCompatibility = JavaVersion.VERSION_11  // Updated to Java 11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()  // Ensure Kotlin is compatible with Java 11
+    }
+
+    defaultConfig {
+        applicationId = "com.example.lovespot"
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug  // Change for release signing config
+        }
+    }
+
+    // Firebase-related configurations (if needed)
+    buildFeatures {
+        viewBinding = true  // Enable viewBinding if necessary
+    }
+}
+
+dependencies {
+    implementation "com.google.firebase:firebase-analytics:21.0.0"  // Firebase SDK
+    implementation "com.google.firebase:firebase-auth:21.0.1"      // Firebase Authentication (if needed)
+
+    // Firebase SDKs and dependencies
+    implementation "com.google.firebase:firebase-firestore:24.0.0"  // Example: Firestore for your app (if needed)
+}
+
+flutter {
+    source = "../.."  // Flutter source directory
+}
+
+apply plugin: 'com.google.gms.google-services'  // Ensure this line is added for Firebase services
